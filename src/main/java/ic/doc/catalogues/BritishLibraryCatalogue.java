@@ -7,11 +7,17 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public class BritishLibraryCatalogue {
+public class BritishLibraryCatalogue implements LibraryCatalogue{
 
     // imagine that each new instance of this object uses more than 500MB of RAM
 
+	private static BritishLibraryCatalogue instance;
+	
     private final Collection<Book> catalogue = allTheBooks();
+    
+    private BritishLibraryCatalogue() {
+    	
+    }
 
     public List<Book> searchFor(String author) {
 
@@ -38,6 +44,13 @@ public class BritishLibraryCatalogue {
             new Book("The Life and Opinions of Tristram Shandy, Gentleman", "Sterne"));
 
             // and so on... Imagine that this list is very large and therefore uses a lot of memory.
+    }
+    
+    public static synchronized BritishLibraryCatalogue getInstance() {
+    	if (instance == null) {
+    		instance = new BritishLibraryCatalogue();
+    	}
+    	return instance;
     }
 
 }
