@@ -1,6 +1,5 @@
 package ic.doc;
 
-import ic.doc.catalogues.BritishLibraryCatalogue;
 import ic.doc.catalogues.LibraryCatalogue;
 
 import java.util.List;
@@ -16,6 +15,6 @@ public class BookSearchQuery {
     }
 
     public List<Book> execute() {
-        return libCatalogue.getInstance().searchFor(author);
+        return libCatalogue.searchFor(author);
     }
 }

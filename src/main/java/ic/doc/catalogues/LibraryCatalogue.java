@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface LibraryCatalogue {
 
-	public List<Book> searchFor(String author);
-	
-	
-	
+	List<Book> searchFor(String author);
+		
 }

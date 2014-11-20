@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public class BritishLibraryCatalogue implements LibraryCatalogue{
+public class BritishLibraryCatalogue implements LibraryCatalogue {
 
     // imagine that each new instance of this object uses more than 500MB of RAM
 
@@ -18,9 +18,9 @@ public class BritishLibraryCatalogue implements LibraryCatalogue{
     private BritishLibraryCatalogue() {
     	
     }
-
+    
+    @Override
     public List<Book> searchFor(String author) {
-
         List<Book> results = new ArrayList<>();
         for (Book book : catalogue) {
             if (book.isWrittenBy(author)) {
